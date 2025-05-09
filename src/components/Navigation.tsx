@@ -23,9 +23,9 @@ const Navigation = () => {
             <span className="ml-2 font-quicksand font-bold text-xl text-leap-dark">LEAP</span>
           </div>
 
-          {/* Navigation items centered */}
-          <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex space-x-8 mx-auto">
+          {/* Navigation items perfectly centered */}
+          <div className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+            <div className="flex space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
