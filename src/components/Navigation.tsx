@@ -17,24 +17,28 @@ const Navigation = () => {
     <nav className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
+          {/* Logo aligned to the left */}
           <div className="flex items-center">
             <GraduationCap className="h-8 w-8 text-leap-teal" />
             <span className="ml-2 font-quicksand font-bold text-xl text-leap-dark">LEAP</span>
           </div>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="font-medium text-leap-dark/70 hover:text-leap-teal transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
+          {/* Navigation items centered */}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex space-x-8 mx-auto">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="font-medium text-leap-dark/70 hover:text-leap-teal transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
 
+          {/* Contact button aligned to the right */}
           <Button
             className="hidden md:flex bg-leap-teal hover:bg-leap-teal/90 text-white"
             onClick={() => window.open("https://wa.me/917339636022", "_blank")}
