@@ -11,7 +11,7 @@ const Hero = () => {
             Learning and Educational Academy of Porto Novo
           </h1>
           <p className="text-xl mb-6 text-gray-600">
-            Empowering minds through quality education in Porto Novo.
+            Empowering through Education & Ethics
           </p>
           <div className="flex flex-wrap gap-4">
             <a 
@@ -31,9 +31,10 @@ const Hero = () => {
         </div>
         <div className="md:w-1/2 flex justify-center">
           <img 
-            src="https://postimg.cc/PPD8sgSp" 
+            src="/lovable-uploads/401f675b-8256-4417-b4b9-e519021c1bc3.png" 
             alt="LEAP Academy Logo" 
-            className="max-w-full h-auto rounded-lg shadow-lg"
+            className="max-w-full h-auto rounded-lg shadow-lg animate-fade-in"
+            style={{ maxHeight: "350px" }}
           />
         </div>
       </div>

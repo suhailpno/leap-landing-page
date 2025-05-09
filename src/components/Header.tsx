@@ -13,8 +13,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-primary">LEAP</span>
+        <div className="flex items-center space-x-3">
+          <img 
+            src="/lovable-uploads/401f675b-8256-4417-b4b9-e519021c1bc3.png" 
+            alt="LEAP Logo" 
+            className="h-12 w-12 md:h-14 md:w-14 object-contain"
+          />
+          <span className="text-xl font-bold text-primary hidden md:inline">LEAP</span>
         </div>
         
         {/* Mobile menu button */}
