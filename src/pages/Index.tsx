@@ -16,15 +16,16 @@ const Index = () => {
       setScrollY(window.scrollY);
     };
     
-    // Animation on scroll effect
+    // Animation on scroll effect with improved readability
     const animateOnScroll = () => {
       const elements = document.querySelectorAll('.scroll-animate');
+      const windowHeight = window.innerHeight;
       
       elements.forEach((element) => {
         const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
         
-        if (elementPosition < windowHeight * 0.85) {
+        if (elementPosition < triggerPoint) {
           element.classList.add('animate-fade-in');
           element.classList.remove('opacity-0');
           element.classList.add('opacity-100');
@@ -35,11 +36,16 @@ const Index = () => {
     // Apply initial animations
     const sections = document.querySelectorAll('section');
     sections.forEach((section) => {
-      section.classList.add('scroll-animate', 'opacity-0', 'transition-all', 'duration-700');
+      section.classList.add(
+        'scroll-animate', 
+        'opacity-0', 
+        'transition-all', 
+        'duration-700'
+      );
     });
     
-    // Run once on load
-    animateOnScroll();
+    // Run animations on initial load after a slight delay for better user experience
+    setTimeout(animateOnScroll, 100);
     
     // Add event listeners
     window.addEventListener('scroll', handleScroll);
@@ -51,23 +57,32 @@ const Index = () => {
     };
   }, []);
 
-  // Apply parallax effect based on scroll position
+  // Apply smooth parallax effect based on scroll position
   const parallaxStyle = {
     transform: `translateY(${scrollY * 0.1}px)`,
     transition: 'transform 0.1s ease-out',
   };
 
   return (
-    <div className="flex flex-col min-h-screen perspective-1000 bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white overflow-hidden">
+    <div className="flex flex-col min-h-screen perspective-1000 bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white">
+      {/* Background blur effects with improved readability */}
       <div className="fixed top-0 left-0 w-full h-full opacity-50 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-purple-600/20 mix-blend-overlay blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-blue-500/20 mix-blend-overlay blur-[100px] animate-pulse" style={{animationDelay: "2s"}}></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-indigo-600/20 mix-blend-overlay blur-[100px] animate-pulse" style={{animationDelay: "4s"}}></div>
+        <div 
+          className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-blue-500/20 mix-blend-overlay blur-[100px] animate-pulse" 
+          style={{animationDelay: "2s"}}
+        ></div>
+        <div 
+          className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-indigo-600/20 mix-blend-overlay blur-[100px] animate-pulse" 
+          style={{animationDelay: "4s"}}
+        ></div>
       </div>
       
+      {/* Main content container with proper z-index */}
       <div className="relative z-10">
         <Navigation />
         <main className="flex-grow">
+          {/* Hero section with parallax effect */}
           <div style={parallaxStyle}>
             <Hero />
           </div>
