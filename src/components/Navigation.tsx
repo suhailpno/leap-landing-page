@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Menu, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, GraduationCap, Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Navigation = () => {
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 relative">
           {/* Logo aligned to the left */}
           <div className="flex items-center">
             <GraduationCap className="h-8 w-8 text-leap-teal" />
@@ -38,13 +38,31 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Contact button aligned to the right */}
-          <Button
-            className="hidden md:flex bg-leap-teal hover:bg-leap-teal/90 text-white"
-            onClick={() => window.open("https://wa.me/917339636022", "_blank")}
-          >
-            Contact Us
-          </Button>
+          {/* Contact button and social icons aligned to the right */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Social media icons */}
+            <div className="flex items-center space-x-2 mr-2">
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Linkedin size={18} />
+              </a>
+            </div>
+            
+            <Button
+              className="bg-leap-teal hover:bg-leap-teal/90 text-white"
+              onClick={() => window.open("https://wa.me/917339636022", "_blank")}
+            >
+              Contact Us
+            </Button>
+          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
@@ -77,6 +95,21 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
+            {/* Social media icons in mobile menu */}
+            <div className="flex items-center space-x-4 py-2">
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="text-gray-500 hover:text-leap-teal transition-colors">
+                <Linkedin size={18} />
+              </a>
+            </div>
             <Button
               className="w-full bg-leap-teal hover:bg-leap-teal/90 text-white mt-4"
               onClick={() => window.open("https://wa.me/917339636022", "_blank")}
