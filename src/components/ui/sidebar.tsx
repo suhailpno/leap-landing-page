@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
@@ -13,7 +14,6 @@ import { Skeleton } from "@/components/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
@@ -575,6 +575,7 @@ const SidebarMenuButton = React.forwardRef<
       }
     }
 
+    // Modified to avoid context issues with nested TooltipProviders
     return (
       <Tooltip>
         <TooltipTrigger asChild>{button}</TooltipTrigger>

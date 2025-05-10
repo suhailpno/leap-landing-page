@@ -65,7 +65,7 @@ const Index = () => {
         <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-indigo-600/20 mix-blend-overlay blur-[100px] animate-pulse" style={{animationDelay: "4s"}}></div>
       </div>
       
-      <div className="transform-style-3d relative z-10">
+      <div className="relative z-10">
         <Navigation />
         <main className="flex-grow">
           <div style={parallaxStyle}>
